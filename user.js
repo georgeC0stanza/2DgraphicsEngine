@@ -81,4 +81,4 @@ function initializeKeyBindings(){
 }
 
 
-export *;
+export * from ...;
