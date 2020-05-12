@@ -1,4 +1,4 @@
-import {SpritesMaker, TileMap} from 'main.js';
+import {SpritesMaker, TileMap} from './main.js';
 'use strict';
 
 const { spriteSet, tilemapList } = loadResources();
