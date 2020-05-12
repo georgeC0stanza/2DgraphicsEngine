@@ -47,7 +47,3 @@
     transform: scale(1);
     visibility: hidden;
   }
-
-  .b {
-      z-index: 7;
-  }
