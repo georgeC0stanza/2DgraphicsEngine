@@ -1,50 +1,53 @@
 :root {
-    --TILESIZE: 50px; /* Size of tiles */
-    --SPRITESIZE: 50px; /* Size of sprites */
+    --TILESIZE: 50px;
+    /* Size of tiles */
+    --SPRITESIZE: 50px;
+    /* Size of sprites */
     --WINDOWIDTH: 650px;
     --WINDOWHEIGHT: 500px;
     --WINDOWBACKGROUND: white;
-}
-
-body {
+  }
+  
+  body {
     background-color: black;
-}
-
-img {
+  }
+  
+  img {
     display: block;
-}
-
-#window {
+  }
+  
+  .main {
     overflow: hidden;
     margin: 0 auto;
     position: relative;
     width: var(--WINDOWIDTH);
     height: var(--WINDOWHEIGHT);
     background: var(--WINDOWBACKGROUND);
-}
-
-#viewport {
+  }
+  
+  .tilemap {
+    display: grid;
     position: absolute;
-}
-
-#tilemap {
-  display: grid;
-  z-index: -1;
-}
-
-.tile {
-  text-align: center;
-}
-
-.tileImage {
+  }
+  
+  .tilemap > div {
+    text-align: center;
+  }
+  
+  .tilemap > div > img {
     height: var(--TILESIZE);
-    width:  var(--TILESIZE);
-}
-
-.sprites {
+    width: var(--TILESIZE);
+  }
+  
+  .main > img {
     position: absolute;
     height: var(--SPRITESIZE);
-    width:  var(--SPRITESIZE);
+    width: var(--SPRITESIZE);
     z-index: 1;
     transform: scale(1);
-}
+    visibility: hidden;
+  }
+
+  .b {
+      z-index: 7;
+  }
