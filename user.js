@@ -1,4 +1,4 @@
-import {SpritesMaker, TileMap} from 'https://georgec0stanza.github.io/2DgraphicsEngine/main.js';
+import {SpritesMaker, TileMap} from './main.js';
 'use strict';
 
 const { spriteSet, tilemapList } = loadResources();
