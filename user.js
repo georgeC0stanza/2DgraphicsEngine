@@ -81,4 +81,4 @@ function initializeKeyBindings(){
 }
 
 
-export * from ...;
+export {tilemap, spriteController, temp};
