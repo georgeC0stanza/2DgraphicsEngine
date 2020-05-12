@@ -9,8 +9,10 @@
     <!--<script type="module" src="main.js" defer></script> -->
     <script type="module" src="user.js" defer></script>
     <script type="module" defer>
-       import mymodule from './user.js';
-       window.mymodule = mymodule;
+        import {tileMap, spriteController, temp} from './user.js';
+        window.tileMap = tileMap;
+        window.spriteController = spriteController;
+        window.temp = temp;
     </script>
 </head>
 <body>
