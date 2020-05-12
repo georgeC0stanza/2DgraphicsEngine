@@ -1,0 +1,50 @@
+:root {
+    --TILESIZE: 50px; /* Size of tiles */
+    --SPRITESIZE: 50px; /* Size of sprites */
+    --WINDOWIDTH: 650px;
+    --WINDOWHEIGHT: 500px;
+    --WINDOWBACKGROUND: white;
+}
+
+body {
+    background-color: black;
+}
+
+img {
+    display: block;
+}
+
+#window {
+    overflow: hidden;
+    margin: 0 auto;
+    position: relative;
+    width: var(--WINDOWIDTH);
+    height: var(--WINDOWHEIGHT);
+    background: var(--WINDOWBACKGROUND);
+}
+
+#viewport {
+    position: absolute;
+}
+
+#tilemap {
+  display: grid;
+  z-index: -1;
+}
+
+.tile {
+  text-align: center;
+}
+
+.tileImage {
+    height: var(--TILESIZE);
+    width:  var(--TILESIZE);
+}
+
+.sprites {
+    position: absolute;
+    height: var(--SPRITESIZE);
+    width:  var(--SPRITESIZE);
+    z-index: 1;
+    transform: scale(1);
+}
