@@ -79,3 +79,6 @@ function initializeKeyBindings(){
         }
     });
 }
+
+
+export *;
