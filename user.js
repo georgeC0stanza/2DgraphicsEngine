@@ -27,7 +27,7 @@ worker.addEventListener('message', function(e) {
     console.log(e.data);
 });
   
-worker.postMessage('Happy Birthday');
+worker.postMessage(['Happy Birthday', spriteController, TileMap]);
 
 
 function loadResources(){
