@@ -56,18 +56,18 @@ class SpritesMaker {
         }
     }
 
-    reflect(index, dX, dY) {
+    reflect(index, X, Y) {
         const { style } = this.sprites[index];
-        if (dX && dY){
+        if (!X && !Y){
             style.transform = "scale(1)";
         }
-        else if (dX && !dY){
+        else if (!X && Y){
             style.transform = "scale(1, -1)";
         }
-        else if (!dX && dY){
+        else if (X && !Y){
             style.transform = "scale(-1, 1)";
         }
-        else if (!dX && !dY){
+        else if (X && Y){
             style.transform = "scale(-1)";
         }
     }
