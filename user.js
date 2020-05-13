@@ -20,6 +20,16 @@ spriteController.setZIndex(0, temp);
 
 initializeKeyBindings();
 
+
+var worker = new Worker('worker.js');
+
+worker.addEventListener('message', function(e) {
+    console.log(e.data);
+});
+  
+worker.postMessage('Happy Birthday');
+
+
 function loadResources(){
     const img0 = 'images/sky.png';
     const img1 = 'images/ground.png';
