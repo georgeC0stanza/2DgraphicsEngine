@@ -24,10 +24,10 @@ initializeKeyBindings();
 var worker = new Worker('worker.js');
 
 worker.addEventListener('message', function(e) {
-    console.log(e.data);
+    spriteController.translate(2, e.data[0], e.data[1]);
 });
   
-worker.postMessage('Happy Birthday');
+worker.postMessage('Move My Bird!');
 
 
 
@@ -36,32 +36,30 @@ worker.postMessage('Happy Birthday');
 var keyState = {};
 
 window.addEventListener('keydown', function(e) {
-keyState[e.key] = true;
+    keyState[e.key] = true;
 }, true);
 
 window.addEventListener('keyup', function(e) {
-keyState[e.key] = false;
+    keyState[e.key] = false;
 }, true);
 
 function gameLoop() {
-if (keyState['n']) {
-    spriteController.translate(0, -10, 0);
-    spriteController.translate(1, -10, 0);
-    spriteController.reflect(0, true, false);
-    spriteController.reflect(1, true, false);
-}
-if (keyState['m']) {
-    spriteController.translate(0, 10, 0);
-    spriteController.translate(1, 10, 0);
-    spriteController.reflect(0, false, false);
-    spriteController.reflect(1, false, false);
-}
-setTimeout(gameLoop, 10);
+    if (keyState['n']) {
+        spriteController.translate(0, -10, 0);
+        spriteController.translate(1, -10, 0);
+        spriteController.reflect(0, true, false);
+        spriteController.reflect(1, true, false);
+    }
+    if (keyState['m']) {
+        spriteController.translate(0, 10, 0);
+        spriteController.translate(1, 10, 0);
+        spriteController.reflect(0, false, false);
+        spriteController.reflect(1, false, false);
+    }
+    setTimeout(gameLoop, 10);
 }
 
 gameLoop();
-
-
 
 
 function loadResources(){
