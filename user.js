@@ -24,9 +24,16 @@ initializeKeyBindings();
 var worker = new Worker('worker.js');
 
 worker.addEventListener('message', function(e) {
-    spriteController.translate(2, e.data[0], e.data[1]);
+    const left = e.data[0];
+    const top = e.data[1];
+    spriteController.translate(2, left, top);
+    if (left > 0) {
+        spriteController.reflect(2, true, false);
+    }
+    else {
+        spriteController.reflect(2, true, false);
+    }
 });
-  
 worker.postMessage('Move My Bird!');
 
 
