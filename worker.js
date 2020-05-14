@@ -1,13 +1,11 @@
 self.addEventListener('message', function(e) {
-    function sendNumber() {
+    setInterval(() => {
         let rand = Math.random() * 20;
         let rand2 = Math.random() * 20;
         self.postMessage([rand, rand2]);
         
-        setTimeout(sendNumber, 100);
-    }
-    sendNumber();
+    }, 500);
 
-    this.self.close();
+//    this.self.close();
 });
 
