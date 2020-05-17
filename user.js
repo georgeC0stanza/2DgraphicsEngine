@@ -33,6 +33,9 @@ worker.addEventListener('message', function(e) {
     else {
         spriteController.reflect(2, true, false);
     }
+    
+    tileMap.reflect(144 + e.data[3], e.data[4], 0);
+    tileMap.reflect(144 + ((e.data[3] + e.data[2]) % 16), (e.data[4] + 1) % 1, 0);
 });
 worker.postMessage('Move My Bird!');
 
