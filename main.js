@@ -183,6 +183,76 @@ class TileMap {
     setImage(index, imgSource) {
         this.tiles[index].children[0].src = imgSource;
     }
+    
+    
+    getOrientation(index) {
+        const { transform } = this.tiles[index].children[0].style.transform;
+        if (transform === "scale(1)"){
+            return {x: 1, y: 1};
+        }
+        else if (transform === "scale(-1)"){
+            return {x: -1, y: -1};
+        }
+        else if (transform === "scale(1, -1)"){
+            return {x: 1, y: -1};
+        }
+        else if (transform === "scale(-1, 1)"){
+            return {x: -1, y: 1};
+        }
+        else {
+            return {x: 0, y: 0};
+        }
+    }
+
+    reflectY(index) {
+        const { style } = this.tiles[index];
+        const transform = style.transform;
+        if (transform === "scale(-1, 1)"){ 
+            style.transform = "scale(1)";
+        }
+        else if (transform === "scale(1, -1)"){
+            style.transform = "scale(-1)";
+        }
+        else if (transform === "scale(-1)"){
+            style.transform = "scale(1, -1)";
+        }
+        else {
+            style.transform = "scale(-1, 1)";
+        }
+    }
+
+    reflectX(index) {
+        const { style } = this.tiles[index];
+        const transform = style.transform;
+        if (transform === "scale(-1, 1)"){
+            style.transform = "scale(-1)";
+        }
+        else if (transform === "scale(1, -1)"){
+            style.transform = "scale(1)";
+        }
+        else if (transform === "scale(-1)"){
+            style.transform = "scale(-1, 1)";
+        }
+        else {
+            style.transform = "scale(1, -1)";
+        }
+    }
+
+    reflect(index, X, Y) {
+        const { style } = this.tiles[index];
+        if (!X && !Y){
+            style.transform = "scale(1)";
+        }
+        else if (!X && Y){
+            style.transform = "scale(1, -1)";
+        }
+        else if (X && !Y){
+            style.transform = "scale(-1, 1)";
+        }
+        else if (X && Y){
+            style.transform = "scale(-1)";
+        }
+    }
 }
 
 export {SpritesMaker, TileMap};
