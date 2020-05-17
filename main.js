@@ -239,7 +239,7 @@ class TileMap {
     }
 
     reflect(index, X, Y) {
-        const { style } = this.tiles[index];
+        const { style } = this.tiles[index].style;
         if (!X && !Y){
             style.transform = "scale(1)";
         }
